@@ -66,17 +66,6 @@ def ui_info():
 	Question answering system built on top of GPT3.
 	""")
 	ui_spacer(1)
-	st.write("Made by [Maciej Obarski](https://www.linkedin.com/in/mobarski/).", unsafe_allow_html=True)
-	ui_spacer(1)
-	st.markdown("""
-		Thank you for your interest in my application.
-		Please be aware that this is only a Proof of Concept system
-		and may contain bugs or unfinished features.
-		If you like this app you can ❤️ [follow me](https://twitter.com/KerbalFPV)
-		on Twitter for news and updates.
-		""")
-	ui_spacer(1)
-	st.markdown('Source code can be found [here](https://github.com/mobarski/ask-my-pdf).')
 
 def ui_api_key():
 	if ss['community_user']:
@@ -84,7 +73,7 @@ def ui_api_key():
 		t1,t2 = st.tabs(['community version','enter your own API key'])
 		with t1:
 			pct = model.community_tokens_available_pct()
-			st.write(f'Community tokens available: :{"green" if pct else "red"}[{int(pct)}%]')
+			st.write(f'Please add API key to this tab')
 			st.progress(pct/100)
 			st.write('Refresh in: ' + model.community_tokens_refresh_in())
 			st.write('You can sign up to OpenAI and/or create your API key [here](https://platform.openai.com/account/api-keys)')
